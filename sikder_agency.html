@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikder Agency | Digital Storytelling</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --agency-blue: #359CAF;
+            --agency-charcoal: #0A0A0A;
+        }
+        body {
+            background: var(--agency-charcoal);
+            color: #E0E0E0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .hero-banner {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), #0A0A0A), url('sikder_agency.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 24px;
+        }
+        .brand-logo-large {
+            width: 420px;
+            max-width: 100%;
+            filter: drop-shadow(0 0 20px rgba(53, 156, 175, 0.3));
+        }
+        
+        .article-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        
+        .section-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .section-header p {
+            font-family: 'Playfair Display', serif;
+            color: var(--agency-blue);
+            font-weight: 700;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .section-header p::before, .section-header p::after {
+            content: '';
+            height: 1px;
+            width: 30px;
+            background: rgba(53, 156, 175, 0.2);
+        }
+
+        .content-block {
+            margin-bottom: 100px;
+        }
+        .content-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, #FFF, var(--agency-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 1px solid rgba(53, 156, 175, 0.1);
+            padding-bottom: 15px;
+        }
+        .content-block p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #BBB;
+        }
+        
+        .brand-text {
+            color: var(--agency-blue);
+            font-weight: 700;
+        }
+
+        .list-wrap {
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(53, 156, 175, 0.1);
+            margin-bottom: 40px;
+        }
+        .list-wrap h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #FFF;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--agency-blue);
+        }
+
+        .callout {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            text-align: center;
+            padding: 80px 0;
+            color: var(--agency-blue);
+        }
+
+        .vision-box {
+            background: rgba(53, 156, 175, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid var(--agency-blue);
+            text-align: center;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1000;
+        }
+        .social-nav {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+        .btn-back, .btn-social {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 100px;
+            color: #FFF;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-social {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            font-size: 18px;
+        }
+        .btn-back:hover, .btn-social:hover {
+            background: var(--agency-blue);
+            border-color: var(--agency-blue);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 40vh;
+            }
+            .brand-logo-large {
+                width: 280px;
+            }
+            .article-container {
+                padding: 40px 20px;
+            }
+            .content-block h2 {
+                font-size: 32px;
+            }
+            .content-block p {
+                font-size: 16px;
+            }
+            .callout {
+                font-size: 32px;
+                padding: 40px 0;
+            }
+            .vision-box {
+                padding: 30px 20px;
+            }
+            .back-nav, .social-nav {
+                top: 15px;
+            }
+            .back-nav { left: 15px; }
+            .social-nav { right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
+    </div>
+
+    <div class="social-nav">
+        <a href="https://facebook.com/sikderagency.studio" target="_blank" class="btn-social"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <header class="hero-banner">
+        <img src="sikder_agency.png" alt="Sikder Agency" class="brand-logo-large">
+    </header>
+
+    <main class="article-container">
+        
+        <div class="section-header">
+            <p>Creative Digital Agency</p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-block reveal">
+            <h2>The Agency</h2>
+            <p><span class="brand-text">Sikder Agency</span> is a creative digital brand focused on storytelling, visual creativity, branding, and AI-powered content creation. It is more than just a digital marketing agency — it is a creative space where ideas, emotions, and modern technology come together to create meaningful digital experiences.</p>
+            <p>At <span class="brand-text">Sikder Agency</span>, I work on building engaging content, strong visual identities, and creative digital solutions that help brands and individuals stand out in the modern online world.</p>
+            <div class="callout">"Where Creativity Meets Digital Storytelling"</div>
+        </div>
+
+        <!-- Services -->
+        <div class="content-block reveal">
+            <h2>Digital Content Creation</h2>
+            <p>Our goal is to create content that connects emotionally with people while maintaining a clean and professional visual style.</p>
+            <div class="list-wrap">
+                <ul>
+                    <li>Storytelling & Poetry Recitation Videos</li>
+                    <li>Cinematic Reels & Creative Visual Storytelling</li>
+                    <li>Educational & Inspirational Content</li>
+                    <li>Short-form Social Media Videos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block reveal">
+            <h2>Graphic Design & Branding</h2>
+            <p>I prefer minimalist, modern, and impactful design styles that help brands look professional and memorable.</p>
+            <div class="list-wrap">
+                <ul>
+                    <li>Logo & Brand Identity Design</li>
+                    <li>Social Media & Post Design</li>
+                    <li>YouTube Thumbnail & Banner Design</li>
+                    <li>Promotional Creatives & T-shirt Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block reveal">
+            <h2>Digital Capabilities</h2>
+            <div class="list-wrap">
+                <h3>Social Media Management</h3>
+                <ul>
+                    <li>Content Planning & Caption Writing</li>
+                    <li>Hashtag Research & Reel Strategy</li>
+                    <li>Page Branding & Creative Engagement</li>
+                </ul>
+            </div>
+            <div class="list-wrap">
+                <h3>Email Marketing</h3>
+                <ul>
+                    <li>Promotional Email Design</li>
+                    <li>Mailchimp Campaign Setup</li>
+                    <li>Lead Generation & Business Email Content</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block reveal">
+            <h2>AI-Powered Innovation</h2>
+            <p>My focus is to combine creativity with AI technology to produce fast, modern, and high-quality content experiences.</p>
+            <div class="list-wrap">
+                <ul>
+                    <li>AI Content Ideas & Script Writing</li>
+                    <li>AI Visual Concepts & Research</li>
+                    <li>Voice-over Ideas & Story Development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block reveal">
+            <div class="vision-box">
+                <h3 style="font-family:'Playfair Display', serif; font-size:32px; color:var(--agency-blue); margin-bottom:20px;">Our Vision</h3>
+                <p>My vision is to create digital experiences that are not only visually attractive but also emotionally meaningful. Through <span class="brand-text">Sikder Agency</span>, I want to combine creativity, storytelling, design, technology, and AI innovation to build content and brands that people truly remember.</p>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-style: italic;">"<span class="brand-text">Sikder Agency</span> is a journey of creativity, imagination, and digital innovation."</p>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #444; font-size: 14px;">&copy; 2026 Sikder Agency. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

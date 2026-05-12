@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sina Sikder | YouTube & Content Creation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --yt-red: #FF0000;
+            --yt-gold: #fbbf24;
+            --yt-dark: #050505;
+        }
+        body {
+            background: var(--yt-dark);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .studio-hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), var(--yt-dark)), url('youtube.png') no-repeat center center;
+            background-size: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hero-title-container {
+            text-align: center;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .hero-tag {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yt-gold);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 10vw, 90px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, var(--yt-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 24px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .philosophy-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 60px;
+            border-radius: 40px;
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: rgba(251, 191, 36, 0.05);
+            line-height: 1;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+            justify-content: center;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-10px);
+            border-color: var(--yt-gold);
+        }
+        .feature-card i {
+            font-size: 32px;
+            color: var(--yt-gold);
+            margin-bottom: 24px;
+        }
+
+        .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 100px;
+            font-size: 13px;
+            color: #ccc;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .vision-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(0,0,0,0));
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            border: 1px solid rgba(251, 191, 36, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .heart-pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1000;
+        }
+        .btn-back {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px 24px;
+            border-radius: 100px;
+            color: #FFF;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background: var(--yt-red);
+            border-color: var(--yt-red);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .studio-hero { height: 60vh; }
+            .philosophy-card { padding: 40px 20px; border-radius: 24px; }
+            .hero-title { font-size: 42px; }
+            .hero-subtitle { font-size: 18px; }
+            .article-container { padding: 60px 20px; }
+            .philosophy-card h2 { font-size: 22px; }
+            .content-grid { grid-template-columns: 1fr; gap: 20px; }
+            .vision-box { padding: 40px 20px; border-radius: 24px; }
+            .back-nav { top: 15px; left: 15px; }
+            .btn-back { padding: 8px 16px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+
+    <header class="studio-hero">
+        <div class="hero-title-container reveal">
+            <span class="hero-tag">Sikder Agency Production</span>
+            <h1 class="hero-title">Sina Sikder</h1>
+            <div class="hero-subtitle">ভাবনা, কবিতা, আমি</div>
+            <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.6); font-size: 18px;">
+                Where technology and creativity coexist beautifully to tell stories that matter.
+            </p>
+        </div>
+    </header>
+
+    <main class="article-container">
+        
+        <!-- Philosophy Section -->
+        <div class="philosophy-card reveal">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-style: italic; margin-bottom: 24px; color: #fff;">
+                "I believe meaningful work does not always need noise. Some creations are meant to inspire softly, speak honestly, and stay with people silently."
+            </h2>
+            <p style="color: var(--yt-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 14px;">— The Creative Philosophy</p>
+        </div>
+
+        <!-- Professional Context -->
+        <div class="reveal" style="margin-bottom: 100px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">The Creative Storyteller</h2>
+            <p style="font-size: 20px; color: #cbd5e1; margin-bottom: 30px;">
+                I am an MIS professional and entrepreneur who finds peace in the power of words and emotions. My YouTube channel is more than just a video platform — it is a digital expression of my journey, transforming thoughts and feelings into visual stories that people can quietly relate to.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span class="tool-badge"><i class="fas fa-magic"></i> Canva</span>
+                <span class="tool-badge"><i class="fas fa-video"></i> CapCut</span>
+                <span class="tool-badge"><i class="fas fa-microphone"></i> Cinematic Voiceover</span>
+                <span class="tool-badge"><i class="fas fa-film"></i> Visual Narratives</span>
+            </div>
+        </div>
+
+        <!-- Core Categories -->
+        <div class="content-grid">
+            <div class="feature-card reveal">
+                <i class="fas fa-feather-alt"></i>
+                <h3>Poetry Recitation</h3>
+                <p style="color: #94a3b8; font-size: 16px;">Spoken reflections and deep poetry captured with cinematic-style content creation to evoke true emotion.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fas fa-book-open"></i>
+                <h3>Storytelling</h3>
+                <p style="color: #94a3b8; font-size: 16px;">Building narratives with purpose and sincerity, focusing on human experiences and quiet inspiration.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Digital Expression</h3>
+                <p style="color: #94a3b8; font-size: 16px;">Combining my MIS background with visual creativity to produce content that is both structured and soulful.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fas fa-briefcase"></i>
+                <h3>Entrepreneurial Journey</h3>
+                <p style="color: #94a3b8; font-size: 16px;">Building a creative ecosystem through <strong>Sikder Agency</strong>'s digital narratives and <strong>BiteBari</strong>'s heartfelt homemade food experiences.</p>
+            </div>
+        </div>
+
+        <!-- Goal Section -->
+        <div class="vision-box reveal" style="margin-top: 120px; position: relative; overflow: hidden;">
+            <div class="heart-pulse">
+                <i class="fas fa-heart" style="font-size: 64px; color: var(--yt-red); filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.4));"></i>
+            </div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px); margin: 30px 0 20px; color: #fff; letter-spacing: -1px;">The Simple Goal</h3>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: clamp(20px, 4vw, 28px); color: #fff; line-height: 1.4; font-weight: 300; font-style: italic; opacity: 0.9;">
+                    "To build things with purpose, <br>sincerity, and emotion."
+                </p>
+            </div>
+            <div style="margin-top: 60px;">
+                <a href="https://youtube.com/@imsinasikder" target="_blank" class="cta-button" style="background: var(--yt-red); color: #fff; padding: 22px 48px; font-size: 20px; box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3);">
+                    <i class="fab fa-youtube" style="margin-right: 12px;"></i> Subscribe on YouTube
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #444; font-size: 14px;">&copy; 2026 Sina Sikder | Sikder Agency Production. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

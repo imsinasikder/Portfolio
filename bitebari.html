@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteBari | Brand Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bb-accent: #D4AF37;
+            --bb-charcoal: #0A0A0A;
+            --bb-gray: #E0E0E0;
+            --agency-blue: #359CAF;
+        }
+        body {
+            background: var(--bb-charcoal);
+            color: var(--bb-gray);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .hero-banner {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), #0A0A0A), url('bb_hero_bg.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 24px;
+        }
+        .brand-logo-large {
+            width: 420px; /* Slightly bigger as requested */
+            max-width: 100%;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+            mix-blend-mode: lighten;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        
+        .section-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .section-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #FFF;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        .section-header p {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .section-header p::before, .section-header p::after {
+            content: '';
+            height: 1px;
+            width: 30px;
+            background: rgba(255,255,255,0.1);
+        }
+        .intro-text { color: var(--bb-accent); }
+
+        .content-block {
+            margin-bottom: 100px;
+        }
+        .content-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin-bottom: 30px;
+            color: #FFF;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        .content-block p {
+            font-size: 19px;
+            margin-bottom: 30px;
+            color: #BBB;
+        }
+        
+        .brand-text {
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+        }
+        .bite { color: #7ed957; }
+        .bari { color: #ffde5f; }
+        .agency { color: var(--agency-blue); }
+
+        .img-wrap {
+            margin: 50px 0;
+            text-align: center;
+        }
+        .img-wrap img {
+            max-width: 450px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 50px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .list-wrap {
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 40px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--bb-accent);
+        }
+
+        .callout {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            text-align: center;
+            padding: 60px 0;
+            color: var(--bb-accent);
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1000;
+        }
+        .social-nav {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+        .btn-back, .btn-social {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 100px;
+            color: #FFF;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-social {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            font-size: 18px;
+        }
+        .btn-back:hover, .btn-social:hover {
+            background: var(--bb-accent);
+            border-color: var(--bb-accent);
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 42px;
+            }
+            .hero-banner {
+                height: 40vh;
+            }
+            .brand-logo-large {
+                width: 280px;
+            }
+            .article-container {
+                padding: 40px 20px;
+            }
+            .content-block h2 {
+                font-size: 28px;
+            }
+            .img-grid {
+                grid-template-columns: 1fr;
+            }
+            .callout {
+                font-size: 32px;
+            }
+            .back-nav, .social-nav {
+                top: 15px;
+            }
+            .back-nav { left: 15px; }
+            .social-nav { right: 15px; }
+            .btn-back {
+                padding: 8px 15px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
+    </div>
+
+    <div class="social-nav">
+        <a href="https://facebook.com/bitebari" target="_blank" class="btn-social"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <header class="hero-banner">
+        <img src="header-logo.png" alt="BiteBari" class="brand-logo-large">
+    </header>
+
+    <main class="article-container">
+        
+        <div class="section-header">
+            <p><span class="intro-text">A Brand of</span> <span class="agency">Sikder Agency</span></p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-block reveal">
+            <h2>Introduction</h2>
+            <p><span class="brand-text"><span class="bite">Bite</span><span class="bari">Bari</span></span> is a homemade food and dessert brand operating under the creative and entrepreneurial vision of <span class="agency">Sikder Agency</span>. More than just a cake business, <span class="brand-text"><span class="bite">Bite</span><span class="bari">Bari</span></span> represents emotion, creativity, care, and the dream of building meaningful experiences through food.</p>
+            <div class="img-wrap"><img src="BB/1.png" alt="BiteBari Creation"></div>
+            <p>The brand was created with the belief that every celebration, every gathering, and every special moment deserves something handmade, heartfelt, and memorable.</p>
+            <p>The name “<span class="brand-text"><span class="bite">Bite</span><span class="bari">Bari</span></span>” reflects warmth, comfort, and sweetness. “Bite” symbolizes taste and enjoyment, while “Bari” represents home — together creating the idea of homemade happiness in every bite.</p>
+            <div class="img-wrap"><img src="BB/2.png" alt="BiteBari Product"></div>
+            <div class="callout">"Sweet Story in Every Bite."</div>
+        </div>
+
+        <!-- What is BiteBari -->
+        <div class="content-block reveal">
+            <h2>What is BiteBari?</h2>
+            <p><span class="brand-text"><span class="bite">Bite</span><span class="bari">Bari</span></span> is a homemade bakery and dessert brand focused on creating high-quality cakes, pastries, cupcakes, jar cakes, desserts, and future homemade food items with love, care, and creativity.</p>
+            <div class="img-grid">
+                <img src="BB/Birthday Doll Cake.png" alt="Special Cake">
+                <img src="BB/3.png" alt="Sweet Treat">
+            </div>
+            <p>We are not just preparing food — we are building experiences. Every product is handcrafted with attention to detail, fresh ingredients, balanced flavor, and emotional value.</p>
+            <div class="list-wrap">
+                <ul>
+                    <li>Homemade quality & Fresh preparation</li>
+                    <li>Creative presentation & Customization</li>
+                    <li>Customer satisfaction & Emotional connection</li>
+                    <li>Affordable premium experiences</li>
+                </ul>
+            </div>
+            <div class="img-wrap"><img src="BB/4.png" alt="BiteBari Selection"></div>
+        </div>
+
+        <!-- Offerings -->
+        <div class="content-block reveal">
+            <h2>Our Specializations</h2>
+            <p>Currently, <span class="brand-text"><span class="bite">Bite</span><span class="bari">Bari</span></span> specializes in homemade baked and dessert products such as custom birthday cakes, chocolate cakes, vanilla cakes, cupcakes, and jar cakes.</p>
+            <div class="img-grid">
+                <img src="BB/5.png" alt="Cake">
+                <img src="BB/6.png" alt="Cupcake">
+            </div>
+            <p>In the future, we plan to expand into a larger homemade food ecosystem, including snacks, premium sweets, and nationwide delivery.</p>
+            <div class="img-wrap"><img src="BB/Mini Jar Cake.png" alt="Jar Cake"></div>
+        </div>
+
+        <!-- Mission/Vision -->
+        <div class="content-block reveal">
+            <h2>Mission & Vision</h2>
+            <p>Our mission is to create fresh, high-quality products that bring joy and comfort to people’s lives. We aim to become one of the most trusted homemade food brands in Bangladesh.</p>
+            <div class="img-wrap"><img src="BB/Cake Sale Promotion Post.png" alt="Promotion"></div>
+            <div class="list-wrap">
+                <h3 style="color:#FFF; margin-bottom:15px;">We aim to represent:</h3>
+                <ul>
+                    <li>Quality & Creativity</li>
+                    <li>Warmth & Reliability</li>
+                    <li>Handmade excellence</li>
+                    <li>Emotional storytelling through food</li>
+                </ul>
+            </div>
+            <div class="img-wrap"><img src="BB/Blue Sweet Cake Promo Post.png" alt="Sweet Treat"></div>
+        </div>
+
+        <!-- Difference -->
+        <div class="content-block reveal">
+            <h2>Why We Are Different</h2>
+            <p>We focus on <span class="brand-text">Homemade Quality</span>, maintaining freshness and flavor in every product. Our <span class="brand-text">Emotional Branding</span> connects people to our desserts, and every order tells a story.</p>
+            <div class="img-wrap"><img src="BB/11.png" alt="BiteBari Quality"></div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="content-block reveal">
+            <h2>Achievements</h2>
+            <p>We have successfully handled large-scale event orders, including a highlight of 300 dessert items delivered on time and sold out instantly.</p>
+            <div class="img-grid">
+                <img src="BB/9.png" alt="Event">
+                <img src="BB/10.png" alt="Event Success">
+            </div>
+            <div class="img-wrap"><img src="BB/Vanilla Delicious Cake Facebook Post.png" alt="Product"></div>
+        </div>
+
+        <div class="content-block reveal" style="text-align: center;">
+            <div class="callout">Homemade Foods-Made with Heart</div>
+            <p style="font-size: 16px; margin-top: 40px; color: #444;">&copy; 2026 BiteBari. All rights reserved.</p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
